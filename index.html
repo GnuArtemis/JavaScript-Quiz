@@ -14,13 +14,13 @@
 </head>
 
 <body>
-    <!-- TODO: Nav bar with high scores link on one end, time remaining on the other -->
+    <!-- Nav bar with high scores link on one end, time remaining on the other -->
 
     <nav>
         <ul class="nav nav-tabs">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                    aria-expanded="false">View Highscores</a>
+                <span class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                    aria-haspopup="true" aria-expanded="false">View Highscores</span>
                 <div class="dropdown-menu">
                     <a class="dropdown-item">No Scores Yet!</a>
                     <a class="dropdown-item">No Scores Yet!</a>
@@ -33,24 +33,53 @@
         </ul>
     </nav>
 
-    <!-- TODO: Header with possible headings: 
-        Coding Quiz challenge,-initial view 
-        various questions, 
-        Your Score,
-        High Scores -->
+    <main class="container">
 
-    <!-- TODO: middle section with:  
-        explanation of site, -initial view
-        quiz answers, 
-        info about Your Current Game Score + text entry to save initials, 
-        info about High Scores-->
+        <!-- TODO: Header with possible headings: 
+        1. Coding Quiz challenge,-initial view 
+        2.  various questions, 
+        3.  Your Score,
+        4.  High Scores -->
+        <div class="row">
+            <div class="col">
+                <div id="introHeader">
+                    <h1>Coding Quiz Challenge</h1>
+                </div>
+                <div id="quizQuestions" style="display: none;"></div>
+            </div>
+        </div>
 
-    <!-- TODO: End section with: 
-        button to start quiz-initial view
-        "right" or "wrong" results
-          
-        restart or clear highscores button-->
+        <!-- TODO: middle section with:  
+        1. explanation of site, -initial view
+        2. quiz answers, 
+        3. info about Your Current Game Score + text entry to save initials, 
+        4. info about High Scores-->
+        <div class="row">
+            <div class="col">
+                <div id="introBody">
+                    <p>Welcome to the Javascript Coding Quiz! Take a short quiz and test your Javascript knowledge, then
+                        share your high scores with your friends.</p>
+                </div>
+                <div id="quizAnswers" style="display: none;"></div>
+            </div>
+        </div>
 
+        <!-- TODO: End section with: 
+        1. button to start quiz-initial view
+        2. "right" or "wrong" results
+        3.   
+        4. restart or clear highscores button-->
+        <div class="row">
+            <div class="col">
+                <div id="introButton">
+                    <button type="button" class="btn btn-primary" id="start">Start!</button>
+                </div>
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </div>
+
+
+    </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -61,6 +90,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
