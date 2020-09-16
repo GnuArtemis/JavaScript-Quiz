@@ -28,7 +28,7 @@
                 </div>
             </li>
             <li class="nav-item ml-auto">
-                <span class="nav-link" id="timer">Timer</span>
+                <span class="nav-link" id="timerCorner">Timer</span>
             </li>
         </ul>
     </nav>
@@ -45,7 +45,12 @@
                 <div id="introHeader">
                     <h1>Coding Quiz Challenge</h1>
                 </div>
-                <div id="quizQuestions" style="display: none;"></div>
+                <div id="quizQuestions" style="display: none;">
+                    <h1></h1>
+                </div>
+                <div id="yourScore" style="display: none;">
+                    <h1></h1>
+                </div>
             </div>
         </div>
 
@@ -60,7 +65,12 @@
                     <p>Welcome to the Javascript Coding Quiz! Take a short quiz and test your Javascript knowledge, then
                         share your high scores with your friends.</p>
                 </div>
-                <div id="quizAnswers" style="display: none;"></div>
+                <div id="quizAnswers" style="display: none;">
+                    <ul></ul>
+                </div>
+                <div id="allHighScores" style="display: none;">
+                    <ul></ul>
+                </div>
             </div>
         </div>
 
@@ -74,7 +84,12 @@
                 <div id="introButton">
                     <button type="button" class="btn btn-primary" id="start">Start!</button>
                 </div>
-                <div id="quizResult" style="display: none;"></div>
+                <div id="quizResult" style="display: none;">
+                    <h2 class="result"></h2>
+                </div>
+                <div id="returnToStart"  style="display: none;">
+                    <button type="button" class="btn btn-secondary" id="done">Done</button>
+                </div>
             </div>
         </div>
 
