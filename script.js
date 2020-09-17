@@ -29,11 +29,11 @@ var questionObject = [
     },
     {
         question: "Which of the following is NOT true about Rowlet (as of 2020)?",
-        answers: ["Its evolution is the only stater pokemon with the ghost type","It originally appeared in the Alola region","Its highest stat is speed","It is a companion of Ash in the anime series"],
+        answers: ["Its evolution is the only stater Pokémon with the ghost type","It originally appeared in the Alola region","Its highest stat is speed","It is a companion of Ash in the anime series"],
         correct: "2"
     },
     {
-        question: "How many different pokemon can Eevee evolve into?",
+        question: "How many different Pokémon can Eevee evolve into?",
         answers: ["3", "5", "7", "8","Depends on the game!"],
         correct: "4"
     },
@@ -43,7 +43,7 @@ var questionObject = [
         correct: "3"
     },
     {
-        question: "Which pokemon pair are NOT traditional rivals pairs, according to the Pokedex?",
+        question: "Which Pokémon pair are NOT traditional rivals pairs, according to the Pokedex?",
         answers: ["Seviper/Zangoose","Meowth/Pikachu", "Swellow/Wurmple","Throh/Sawk"],
         correct: "1"
     },
@@ -53,12 +53,12 @@ var questionObject = [
         correct: "1"
     },
     {
-        question: "In what area is Relicanth found in Pokemon Go?",
+        question: "In what area is Relicanth found in Pokémon Go?",
         answers: ["New Zealand","Stonehenge","Australia","Russia", "China"],
         correct: "0"
     },
     {
-        question: "What is the heaviest pokemon (not counting ultra beasts)?",
+        question: "What is the heaviest Pokémon (not counting ultra beasts)?",
         answers: ["Regigas","Snorlax","Melmetal","Metagross","Cosmoem"],
         correct: "4"
     },
@@ -68,7 +68,7 @@ var questionObject = [
         correct: "0"
     },
     {
-        question: "Which pokemon evolves with high friendship?",
+        question: "Which Pokémon evolves with high friendship?",
         answers: ["Vulpix","Swadloon","Skitty","Emolga"],
         correct: "1"
     },
@@ -88,7 +88,7 @@ var questionObject = [
         correct: "2",
     },
     {
-        question: "Which pokemon was NOT featured in the film Detective Pikachu?",
+        question: "Which Pokémon was NOT featured in the film Detective Pikachu?",
         answers: ["Mr. Mime","Gengar","Charizard","Ditto"],
         correct: "1",
     },
@@ -98,12 +98,12 @@ var questionObject = [
         correct: "0"
     },
     {
-        question: "Which generation introducted the most legendary pokemon?",
+        question: "Which generation introducted the most legendary Pokémon?",
         answers: ["II","III","IV","V","VI"],
         correct: "2"
     },
     {
-        question: "Can mystical pokemon be caught through normal gameplay?",
+        question: "Can mystical Pokémon be caught through normal gameplay?",
         answers: ["Yes","No","Looking at YOU, Omega Ruby/Alpha Sapphire"],
         correct: [2]
     },
