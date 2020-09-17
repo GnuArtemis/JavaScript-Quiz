@@ -22,9 +22,11 @@
                 <span class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                     aria-haspopup="true" aria-expanded="false">View Highscores</span>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" id="num1">No Scores Yet!</a>
-                    <a class="dropdown-item" id="num2">No Scores Yet!</a>
-                    <a class="dropdown-item" id="num3">No Scores Yet!</a>
+                    <span class="dropdown-item" id="num1">No Scores Yet!</span>
+                    <span class="dropdown-item" id="num2">No Scores Yet!</span>
+                    <span class="dropdown-item" id="num3">No Scores Yet!</span>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" id="allScores">All scores</a>
                 </div>
             </li>
             <li class="nav-item ml-auto">
@@ -37,19 +39,20 @@
 
         <!-- TODO: Header with possible headings: 
         1. Coding Quiz challenge,-initial view 
-        2.  various questions, 
-        3.  Your Score,
-        4.  High Scores -->
+        2. various questions, 
+        3. Your Current Game Score, -->
         <div class="row">
             <div class="col">
-                <div id="introHeader">
-                    <h1>Coding Quiz Challenge</h1>
-                </div>
-                <div id="quizQuestions" style="display: none;">
-                    <h1></h1>
-                </div>
-                <div id="yourScore" style="display: none;">
-                    <h1></h1>
+                <div class="jumbotron">
+                    <div id="introHeader">
+                        <h1 class="display-4">Coding Quiz Challenge</h1>
+                    </div>
+                    <div id="quizQuestions" style="display: none;">
+                        <h1 class="display-4"></h1>
+                    </div>
+                    <div class="display-4" id="yourScore" style="display: none;">
+                        <h1></h1>
+                    </div>
                 </div>
             </div>
         </div>
@@ -57,8 +60,7 @@
         <!-- TODO: middle section with:  
         1. explanation of site, -initial view
         2. quiz answers, 
-        3. info about Your Current Game Score + text entry to save initials, 
-        4. info about High Scores-->
+        3. text entry to save initials, info about High Scores-->
         <div class="row">
             <div class="col">
                 <div id="introBody">
@@ -69,7 +71,24 @@
                     <ul></ul>
                 </div>
                 <div id="allHighScores" style="display: none;">
-                    <ul></ul>
+                    <div class="row">
+                        <div class="col">
+                            <form class="form-group">
+                                <label for="initials">Enter your Initials here to save your high scores!</label>
+                                <input type="text" class="form-control" id="initials" readonly = true>
+                                <button type="submit" class="btn btn-outline-success" disabled>Save</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" id="highScoreList"> 
+                            <ul></ul>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="https://storage.needpix.com/rsynced_images/pokemon-1656997_1280.png" alt="A cute picture of pikachu">
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -77,8 +96,7 @@
         <!-- TODO: End section with: 
         1. button to start quiz-initial view
         2. "right" or "wrong" results
-        3.   
-        4. restart or clear highscores button-->
+        3. restart or clear highscores button-->
         <div class="row">
             <div class="col">
                 <div id="introButton">
@@ -87,7 +105,7 @@
                 <div id="quizResult" style="display: none;">
                     <h2 class="result"></h2>
                 </div>
-                <div id="returnToStart"  style="display: none;">
+                <div id="returnToStart" style="display: none;">
                     <button type="button" class="btn btn-secondary" id="done">Done</button>
                 </div>
             </div>

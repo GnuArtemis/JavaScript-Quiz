@@ -1,7 +1,17 @@
+
+body {
+    text-align: center;
+}
+
 .choice:hover, .choice:active {
     background-color: salmon;
 }
 
 .result {
     font-weight: bold;
+}
+
+img {
+    width: 100%;
+    max-width: 400px;
 }
