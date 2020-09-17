@@ -13,19 +13,104 @@ var timerCorner = document.querySelector("#timerCorner");
 //Array that stores all the possible quiz questions.  Array elements are objects containing the question, list of answer choices, and a reference to the correct option.
 var questionObject = [
     {
-        question: "Are Java and Javascript very similar languages?",
-        answers: ["Yes", "No", "Maybe", "So"],
+        question: "In which games did the Pokémon Absol first appear?",
+        answers: [ "Gold/Silver","Ruby/Sapphire", "Diamond/Pearl", "Black/White"],
         correct: "1",
     },
     {
-        question: "Does Javascript have strictly defined variables?",
-        answers: ["Um", "lol", "NO", "NOT AT ALL", "WTF"],
+        question: "When did the game Pokémon Yellow come out?",
+        answers: ["1998", "1999", "2006", "2018"],
+        correct: "0"
+    },
+    {
+        question: "Tyrogue evolves into Hitmonlee if which stat is highest?",
+        answers: ["Attack", "Defense", "HP"],
+        correct: "0"
+    },
+    {
+        question: "Which of the following is NOT true about Rowlet (as of 2020)?",
+        answers: ["Its evolution is the only stater pokemon with the ghost type","It originally appeared in the Alola region","Its highest stat is speed","It is a companion of Ash in the anime series"],
         correct: "2"
     },
     {
-        question: "Do you enjoy debugging :)",
-        answers: ["DEVIL", "lol", "NO"],
+        question: "How many different pokemon can Eevee evolve into?",
+        answers: ["3", "5", "7", "8","Depends on the game!"],
+        correct: "4"
+    },
+    {
+        question: "Which type is Fairy weak against?",
+        answers: ["Dragon","Fire", "Psychic","Poison"],
+        correct: "3"
+    },
+    {
+        question: "Which pokemon pair are NOT traditional rivals pairs, according to the Pokedex?",
+        answers: ["Seviper/Zangoose","Meowth/Pikachu", "Swellow/Wurmple","Throh/Sawk"],
+        correct: "1"
+    },
+    {
+        question: "By what method does Phantump evolve?",
+        answers: ["Leveling","Trading","Evolutionary stone","Unique method"],
+        correct: "1"
+    },
+    {
+        question: "In what area is Relicanth found in Pokemon Go?",
+        answers: ["New Zealand","Stonehenge","Australia","Russia", "China"],
         correct: "0"
+    },
+    {
+        question: "What is the heaviest pokemon (not counting ultra beasts)?",
+        answers: ["Regigas","Snorlax","Melmetal","Metagross","Cosmoem"],
+        correct: "4"
+    },
+    {
+        question: "Which character has the strongest connection with Ultra Beasts?",
+        answers: ["Lusamine", "Kukui", "Gladion","Hapu"],
+        correct: "0"
+    },
+    {
+        question: "Which pokemon evolves with high friendship?",
+        answers: ["Vulpix","Swadloon","Skitty","Emolga"],
+        correct: "1"
+    },
+    {
+        question: "Which move is Magicarp's signature move?",
+        answers: ["Struggle","Bounce","Splash","Roar"],
+        correct: "2"
+    },
+    {
+        question: "Which move can Pikachu use, when assisted with balloons?",
+        answers: ["Surf","Rock Smash","Teleport","Fly"],
+        correct: "3"
+    },
+    {
+        question: "Is Spinda always visually unique, when encountered in the wild in the main series of games?",
+        answers: ["Yes","No","Statistically, they might as well be"],
+        correct: "2",
+    },
+    {
+        question: "Which pokemon was NOT featured in the film Detective Pikachu?",
+        answers: ["Mr. Mime","Gengar","Charizard","Ditto"],
+        correct: "1",
+    },
+    {
+        question: "In the anime series, in which region did Misty meet Ash?",
+        answers: ["Kanto","Johto","Hoenn","Sinnoh"],
+        correct: "0"
+    },
+    {
+        question: "Which generation introducted the most legendary pokemon?",
+        answers: ["II","III","IV","V","VI"],
+        correct: "2"
+    },
+    {
+        question: "Can mystical pokemon be caught through normal gameplay?",
+        answers: ["Yes","No","Looking at YOU, Omega Ruby/Alpha Sapphire"],
+        correct: [2]
+    },
+    {
+        question: "Which rodent is best?",
+        answers: ["Pikachu!"],
+        correct: 0
     }
 ];
 
@@ -92,7 +177,7 @@ document.querySelector("#start").addEventListener("click", function (event) {
     //Resets score, index, and timer between rounds. Updates top right corner timer with the time available
     score = 0;
     index = 0;
-    timer = 30;
+    timer = 150;
     finishedGame = false;
     timerCorner.textContent = timer;
 
