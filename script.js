@@ -30,12 +30,40 @@ var questionObject = [
     }
 ];
 
-//TODO: Function that runs upon loading, updates high score page.  Checks local storage for high scores, and displays the top 3 in the dropdown tab.
+//Score: keeps track of current score. Timer: time remaining until quiz end. Countdown: variable containing setInterval
 var score;
-var index;
 var timer;
 var countDown;
+var index;
+//TODO: Function that runs upon loading, updates high score page.  Checks local storage for high scores, and displays the top 3 in the dropdown tab.
 //TODO: checks local storage to see what the all time high score is, and if new high score, updates local storage.
+function updateHighScore(init, sco) {
+    var temp;
+    if (localStorage.getItem("userScores")) {
+        temp = JSON.parse(localStorage.getItem("userScores"));
+    }else {
+        temp = [];
+    } 
+
+    if(init&&sco){
+    var user = {initials: init, score: sco};
+    temp.push(user);
+    temp.sort((a, b) => {
+        return b.score - a.score;
+    });
+}
+    localStorage.setItem("userScores", JSON.stringify(temp));
+    if(temp[0]){
+        document.querySelector("#num1").textContent = `${(temp[0].initials)} ||| ${temp[0].score}`
+    }
+    if(temp[1]){
+        document.querySelector("#num2").textContent = `${(temp[1].initials)} ||| ${temp[1].score}`
+    }if(temp[2]){
+        document.querySelector("#num3").textContent = `${(temp[2].initials)} ||| ${temp[2].score}`
+    }
+
+}
+updateHighScore();
 
 //Starts the quiz when the start button is clicked
 document.querySelector("#start").addEventListener("click", function (event) {
@@ -57,7 +85,7 @@ document.querySelector("#start").addEventListener("click", function (event) {
     countDown = setInterval(() => {
         timer--;
         timerCorner.textContent = timer;
-        if(timer === 0){
+        if (timer === 0) {
             showHighScore();
         }
     }, 1000);
@@ -92,7 +120,7 @@ function generateQuestion(trivia, index) {
             generateQuestion(questionObject[index], index);
         } else {
 
-            score += Math.floor(timer/5);
+            score += Math.floor(timer / 5);
             showHighScore();
         }
     });
@@ -116,7 +144,7 @@ function checkAnswer(trivia, event) {
 
 function showHighScore() {
     clearInterval(countDown);
-    timerCorner.textContent="Timer";
+    timerCorner.textContent = "Timer";
 
     quizQuestions.style.display = "none";
     quizAnswers.style.display = "none";
@@ -126,6 +154,10 @@ function showHighScore() {
     returnToStart.style.display = "inline";
 
     yourScore.children[0].textContent = `Your score: ${score}`
+
+    var init = prompt("What are your initials?");
+    updateHighScore(init, score);
+
     returnToStart.children[0].addEventListener("click", function () {
         yourScore.style.display = "none";
         allHighScores.style.display = "none";
