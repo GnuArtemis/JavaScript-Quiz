@@ -14,7 +14,7 @@ var timerCorner = document.querySelector("#timerCorner");
 var questionObject = [
     {
         question: "In which games did the Pokémon Absol first appear?",
-        answers: [ "Gold/Silver","Ruby/Sapphire", "Diamond/Pearl", "Black/White"],
+        answers: ["Gold/Silver", "Ruby/Sapphire", "Diamond/Pearl", "Black/White"],
         correct: "1",
     },
     {
@@ -29,82 +29,82 @@ var questionObject = [
     },
     {
         question: "Which of the following is NOT true about Rowlet (as of 2020)?",
-        answers: ["Its evolution is the only stater Pokémon with the ghost type","It originally appeared in the Alola region","Its highest stat is speed","It is a companion of Ash in the anime series"],
+        answers: ["Its evolution is the only stater Pokémon with the ghost type", "It originally appeared in the Alola region", "Its highest stat is speed", "It is a companion of Ash in the anime series"],
         correct: "2"
     },
     {
         question: "How many different Pokémon can Eevee evolve into?",
-        answers: ["3", "5", "7", "8","Depends on the game!"],
+        answers: ["3", "5", "7", "8", "Depends on the game!"],
         correct: "4"
     },
     {
         question: "Which type is Fairy weak against?",
-        answers: ["Dragon","Fire", "Psychic","Poison"],
+        answers: ["Dragon", "Fire", "Psychic", "Poison"],
         correct: "3"
     },
     {
         question: "Which Pokémon pair are NOT traditional rivals pairs, according to the Pokedex?",
-        answers: ["Seviper/Zangoose","Meowth/Pikachu", "Swellow/Wurmple","Throh/Sawk"],
+        answers: ["Seviper/Zangoose", "Meowth/Pikachu", "Swellow/Wurmple", "Throh/Sawk"],
         correct: "1"
     },
     {
         question: "By what method does Phantump evolve?",
-        answers: ["Leveling","Trading","Evolutionary stone","Unique method"],
+        answers: ["Leveling", "Trading", "Evolutionary stone", "Unique method"],
         correct: "1"
     },
     {
         question: "In what area is Relicanth found in Pokémon Go?",
-        answers: ["New Zealand","Stonehenge","Australia","Russia", "China"],
+        answers: ["New Zealand", "Stonehenge", "Australia", "Russia", "China"],
         correct: "0"
     },
     {
         question: "What is the heaviest Pokémon (not counting ultra beasts)?",
-        answers: ["Regigas","Snorlax","Melmetal","Metagross","Cosmoem"],
+        answers: ["Regigas", "Snorlax", "Melmetal", "Metagross", "Cosmoem"],
         correct: "4"
     },
     {
         question: "Which character has the strongest connection with Ultra Beasts?",
-        answers: ["Lusamine", "Kukui", "Gladion","Hapu"],
+        answers: ["Lusamine", "Kukui", "Gladion", "Hapu"],
         correct: "0"
     },
     {
         question: "Which Pokémon evolves with high friendship?",
-        answers: ["Vulpix","Swadloon","Skitty","Emolga"],
+        answers: ["Vulpix", "Swadloon", "Skitty", "Emolga"],
         correct: "1"
     },
     {
         question: "Which move is Magicarp's signature move?",
-        answers: ["Struggle","Bounce","Splash","Roar"],
+        answers: ["Struggle", "Bounce", "Splash", "Roar"],
         correct: "2"
     },
     {
         question: "Which move can Pikachu use, when assisted with balloons?",
-        answers: ["Surf","Rock Smash","Teleport","Fly"],
+        answers: ["Surf", "Rock Smash", "Teleport", "Fly"],
         correct: "3"
     },
     {
         question: "Is Spinda always visually unique, when encountered in the wild in the main series of games?",
-        answers: ["Yes","No","Statistically, they might as well be"],
+        answers: ["Yes", "No", "Statistically, they might as well be"],
         correct: "2",
     },
     {
         question: "Which Pokémon was NOT featured in the film Detective Pikachu?",
-        answers: ["Mr. Mime","Gengar","Charizard","Ditto"],
+        answers: ["Mr. Mime", "Gengar", "Charizard", "Ditto"],
         correct: "1",
     },
     {
         question: "In the anime series, in which region did Misty meet Ash?",
-        answers: ["Kanto","Johto","Hoenn","Sinnoh"],
+        answers: ["Kanto", "Johto", "Hoenn", "Sinnoh"],
         correct: "0"
     },
     {
         question: "Which generation introducted the most legendary Pokémon?",
-        answers: ["II","III","IV","V","VI"],
+        answers: ["II", "III", "IV", "V", "VI"],
         correct: "2"
     },
     {
         question: "Can mystical Pokémon be caught through normal gameplay?",
-        answers: ["Yes","No","Looking at YOU, Omega Ruby/Alpha Sapphire"],
+        answers: ["Yes", "No", "Looking at YOU, Omega Ruby/Alpha Sapphire"],
         correct: [2]
     },
     {
@@ -184,6 +184,10 @@ document.querySelector("#start").addEventListener("click", function (event) {
     //First element of the loop of questions.
     generateQuestion(questionObject[0], 0);
 
+    // for(//all questions){
+    //     generateQuestion[0]
+    // }
+
     //AFTER the the start button has been clicked and timer has been reset, sets a time limit, and if it runs out, skips any remaining questions to go straight to the high score page. Note: asynchronous, so even though it is inside a function it will work at any time after it has been created!
     countDown = setInterval(() => {
         timer--;
@@ -217,14 +221,19 @@ function generateQuestion(trivia, index) {
     //After answers have been added to the page, waits for an answer to be chosen. Once it has, it checks the answer. If there are more questions, then it recursively calls "this" function(generate question) for the next question
     answerList.addEventListener("click", function (event) {
         index = checkAnswer(trivia, event, index);
-        if (index < questionObject.length) {
-            generateQuestion(questionObject[index], index);
-        } else {
-            finishedGame = true;
-            score += Math.floor(timer / 5);
-            showHighScore();
-        }
+
+        setTimeout(() => {
+            quizResult.children[0].textContent="";
+            if (index < questionObject.length) {
+                generateQuestion(questionObject[index], index);
+            } else {
+                finishedGame = true;
+                score += Math.floor(timer / 5);
+                showHighScore();
+            }
+        }, 500);
     });
+    
 
 }
 
@@ -278,7 +287,7 @@ function showHighScore() {
         document.querySelector(".btn-outline-success").disabled = true;
         updateHighScore(init, score);
         showHighScoreList();
-        document.querySelector(".form-group").removeEventListener("submit",  functionListener);
+        document.querySelector(".form-group").removeEventListener("submit", functionListener);
     })
 
 
@@ -310,6 +319,6 @@ document.querySelector("#allScores").addEventListener("click", function () {
     introHeader.style.display = "none";
     introBody.style.display = "none";
     introButton.style.display = "none";
-    
+
     showHighScore();
 })
